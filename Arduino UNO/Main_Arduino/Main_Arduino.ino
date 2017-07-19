@@ -58,6 +58,9 @@ void setup() {
 }
 
 void loop() {
+  /*
+   * Wait up to a full commande receive (6 char)
+   */
   if (Serial.available()>=6) {
     Serial.readBytes(gSerial_Buffer, length_Cmd);
     gCmd=0;
@@ -69,6 +72,10 @@ void loop() {
       case 'L' : gCmd = B010;
         break;
     }
+
+    /*
+     * Paring the commande
+     */
     if (gSerial_Buffer[1] == 'M')
     { gCmd = gCmd | B100; }
 
@@ -100,6 +107,9 @@ void loop() {
           break;
     }
 
+    /*
+     * Commande traitment
+     */
     switch (gCmd) {
       case RST : 
           analogWrite(pwm_Right, 255);
