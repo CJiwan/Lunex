@@ -5,7 +5,7 @@
       <paths name="ssh://pi@192.168.1.97:22/usr/bin/python3.4">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/pi/Documents/PyCharm" local="$PROJECT_DIR$" />
+            <mapping deploy="/Documents/PyCharm" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
